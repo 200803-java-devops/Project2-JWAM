@@ -1,6 +1,7 @@
 configuration-as-code
 git
 junit
+docker-workflow
 pipeline-model-definition
 pipeline-stage-step
 pipeline-maven
