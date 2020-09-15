@@ -4,6 +4,8 @@ ENV JENKINS_HOME /var/jenkins_home
 ARG JAVA_OPTS
 ENV JAVA_OPTS "-Djenkins.install.runSetupWizard=false ${JAVA_OPTS:-}"
 
+ENV CASC_JENKINS_CONFIG /var/jenkins_conf
+COPY config/ /var/jenkins_conf/
 
 
 RUN xargs /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
