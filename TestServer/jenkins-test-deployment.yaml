@@ -18,8 +18,7 @@ spec:
       - name: dind-storage
         emptyDir: {}
       - name: jenkins-home
-        persistentVolumeClaim:
-        claimName: jenkins-storage
+        emptyDir: {}
       containers:
       - name: jenkins-test
         image: alxl/gimbus2-jenkins:latest
