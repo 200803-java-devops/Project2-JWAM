@@ -6,5 +6,5 @@ pipeline-model-definition
 pipeline-stage-step
 pipeline-maven
 workflow-aggregator
-kubernetes
+kubernetes-cli
 slack
