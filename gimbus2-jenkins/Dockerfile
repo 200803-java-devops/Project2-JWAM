@@ -1,6 +1,10 @@
 FROM jenkins/jenkins:lts
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+COPY jenkins.yaml /usr/share/jenkins/ref/jenkins.yaml
+COPY jobs.yaml /usr/share/jenkins/ref/jobs.yaml
+ENV JENKINS_HOME /var/jenkins_home
 ENV JAVA_OPTS "-Djenkins.install.runSetupWizard=false"
+ENV CASC_JENKINS_CONFIG "/usr/share/jenkins/ref/"
 ENV JENKINS_USER admin
 ENV JENKINS_PASS admin
 ENV DOCKERVERSION=18.03.1-ce
