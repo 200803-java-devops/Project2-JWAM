@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: targapp-one
-        image: alxl/pipeline-demo:latest
+        image: alxl/targetapp-one:latest
         ports:
         - containerPort: 8080
       
