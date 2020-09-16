@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: targapp-two
+  labels:
+    app: targapp-two
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: targapp-two
+  template:
+    metadata:
+      labels:
+        app: targapp-two
+    spec:
+      containers:
+      - name: targapp-two
+        image: alxl/targapp-two:latest
+        ports:
+        - containerPort: 8080
+      

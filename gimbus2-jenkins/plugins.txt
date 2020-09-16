@@ -1,5 +1,6 @@
 configuration-as-code
 git
+github
 junit
 docker-workflow
 pipeline-model-definition
