@@ -17,6 +17,9 @@ spec:
       volumes:
       - name: dind-storage
         emptyDir: {}
+      - name: jenkins-home
+        persistentVolumeClaim:
+        claimName: jenkins-storage
       containers:
       - name: jenkins-test
         image: alxl/gimbus2-jenkins:latest
@@ -26,11 +29,13 @@ spec:
         env:
         - name: DOCKER_HOST
           value: tcp://localhost:2375
+        volumeMounts:
+        - name: jenkins-home
+          mountPath: "/var/jenkins_home"        
       - name: dind
         image: docker:18.05-dind
         securityContext:
           privileged: true
         volumeMounts:
         - name: dind-storage
-          mountPath: /var/lib/docker
-      
+          mountPath: /var/lib/docker    
