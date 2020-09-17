@@ -1,0 +1,111 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - string:
+          id: "kubectl-creds"
+          scope: GLOBAL
+          secret: "{AQAAABAAAAOQzGVn4lEoiakee6H44pWotLt5nQqbm4uzSXfyEtqceM5OAJnZuwSfAESimc3H4kO728o2sNKk/WEHmNHzIGY0jBcDalFPw+n5xjhlRBMpSzRlcDf1inxX6aMAjCDJTyBCgRSCkN8+sSQXO9jydi3d40sIDkdzjYlL1vbUzV3Qyu5efutmE63EomlzLIZ2qw5K+v9JXXmmoOoWCH0tK6dPsADYKylQpQv11GD/L0TkOnLCVXtW6NFjyxX6QwoKNpCXopvLOmMDWp7p/D6j6Qgm4pk2xf9Wp6XPMYtiOJmRqyTwCgMmX+8/F+k3qfCdiiahRxd/F7+PFyiRM/oWF6zn+v1U4Ku8agylwxnCGiKJRUnjiwMpBSej88IAA5nGBVbPpPo9X3ER/P2vrg/KILNn/TlGhofPxCb6QcpMs3sSq516L1pdT0/iCzrl9VaMClnXygHHwbBOLcOTmOW8dMMUg9i4901h5zgCkU6mA1UQFKLbiQIbQd6Qfkx92OK4Or0r/g7WqtbaZhFgu+1g+G0Ak2lIcq7qWdKEaES7hkBG0suK33PV9t/ucgL4Ncgd4U3/vGbKhdwTiLzcZTatSn2UirF482Z2gjM39pzsNoFWcI6ipCwcg9ScUt8iPuXKQ6DJ0vBNU5BkPPn1nz06WU5X/44u1VX9Lg1YT2AB8Vbxs4ve6lcNZuJWbfV/RsIGx1i66D9NBjxhn74llGi61ovTYe6rIRvHh684qH0bhj7UzSIvmUQnRpKs71EJw2bfGxNER07LpLjA3oWLnRNJ+MeTl8JtEEZu3z9EwkrVy6PvG7AJEnDbV7H1WaGwkGTl6DO2zTsd9fLMEBiuth9IuZdkYrY9V1yH5CTLaeWWl1vxp4CzdT9rcpIoz++USO/bJR8Gn3BDTQpEw8P+dBu2rDvomDBzWk6XjtUmVJKCsqJFMu/cRtX6zp4swZdwlVmGYcoJaUGyYUmVG0crlAPSsdqwk8NKOew3VLHHOIHO7J0jvv00hIrHQ0PmVhPf1GkogCFPnkvrGWA0ukO2eWvz9HFVuau1yNQK2mqDQegVvYMXsNfVh5L2C/neVkBpCfHFy05He+i2w08/rDgNJmc0EY+Xsnv9uITHtxRyo2VeiOSIwa3jFSuDhvcBT8nHc+2ovzo4TrjeBWaQIbpV2ryHNdUq7lwVFoOGdvlyoEFJYombSbsimvDEq6YDkuDfkiimZin9aSk98iVWgdZe8gVH/8lk4g==}"
+      - string:
+          id: "slack-secret"
+          scope: GLOBAL
+          secret: "{AQAAABAAAAAgV69FLpjs4LKn7Ud3KK74//ibUWNcPs2D5hX1bGb4xhNgX1NYzEW4zNHBOB3zI5I9}"
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  labelAtoms:
+  - name: "master"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: false
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "admin"
+        name: "admin"
+        properties:
+        - "apiToken"
+        - mailer:
+            emailAddress: "admin@admin.admin"
+        - preferredProvider:
+            providerId: "default"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
+unclassified:
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  defaultFolderConfiguration:
+    healthMetrics:
+    - worstChildHealthMetric:
+        recursive: true
+  gitSCM:
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "http://18.191.68.52:30101/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  pollSCM:
+    pollingThreadCount: 10
+  slackNotifier:
+    botUser: false
+    sendAsText: false
+    teamDomain: "revaturetrain-cx22851"
+    tokenCredentialId: "slack-secret"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  maven:
+    installations:
+    - name: "maven3"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.6.3"
+  pipelineMaven:
+    triggerDownstreamUponResultAborted: false
+    triggerDownstreamUponResultFailure: false
+    triggerDownstreamUponResultNotBuilt: false
+    triggerDownstreamUponResultSuccess: true
+    triggerDownstreamUponResultUnstable: false
